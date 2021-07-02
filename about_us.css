@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 100%
+  
+}
+
+  
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  max-width: 100%
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+li a:hover {
+  background-color: #111;
+}
+      
+      
+      
+
+  * {box-sizing: border-box}
+  
+    
+h1 {
+    text-align: center; 
+    font-size: 500%; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    
+}
+
+
+
+
+ .column {
+    float: left;
+    width: 30%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    margin-right: auto;
+    margin-left: 6%;
+    max-width: 100%
+  }
+  img {
+      float: right;
+      text-align: right;
+      max-width: 100%
+
+  }
+
+   .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  .container {
+    padding: 0 16px;
+  }
+  
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  } 
+
+  p {
+    text-align: left;
+    color: black;
+  }
+  h2 {
+    text-align: left;
+    
+  }
+
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+  }
+  
+ 
+  .column img {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  
+  .column img:hover {
+    opacity: 1;
+  }
+  
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .column:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.main {
+  text-align: center;
+}
+.AboutBanner{
+  display: block;
+  text-align: center;
+  float: inline-start;
+  max-width: 100%;
+}
+
+.HiringBanner {
+  display: block;
+ 
+  text-align: center;
+  float: inline-start;
+  max-width: 100%;
+
+}
+
+video {
+         
+  display: block ;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  margin-left: auto;
+  margin-right:auto ;
+  
+  
+}
