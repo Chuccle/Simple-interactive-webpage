@@ -160,6 +160,7 @@ a {
     content: "";
     clear: both;
     display: table;
+    float: center;
   }
 
   .row::after {
@@ -172,4 +173,8 @@ a {
 
  img {max-width:100%;} 
 
+input [type=submit]  {
+font-family: Arial, Helvetica, sans-serif;
+font: bold
+ }
  
