@@ -38,12 +38,8 @@
     </br>
     <br>
     - Your mobile number is registered as:
-    <?php 
-    // echo $_POST['mobile']; ?>
    <?php 
-  // $pattern = "/^(\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$/";
 
-//$match = preg_match($pattern,$input);
 $mobile = $_POST['mobile'];
 
 $regex = "/^([0-9]{10,11})$/";
@@ -58,25 +54,7 @@ if (preg_match($regex, $mobile)) {
     
 } else {
  echo "Invalid telephone number.";
-// header('Location: Jobs.php'); 
-
- echo '<script type="text/javascript">';
- echo'alert("Please enter a valid mobile number (format = 7700900129)")';
- echo 'window.location.href="C:\Users\Charlie\Source\Repos\Chuccle\Simple-interactive-webpage\Jobs.php"';
-echo '</script>';
-
-
-}
-
-
-//if count_chars($mobilelen, 3) {
-    // We have a valid phone number
-  //  echo $_POST['mobile'];
-//} else {
-    // We have an invalid phone number
-//echo "Invalid phone number";
-//header('Location: Jobs.php');}
-    ?>
+  ?>
 
 <?php if ($emailValid && $mobileValid == TRUE) {
 savetodb(); }
