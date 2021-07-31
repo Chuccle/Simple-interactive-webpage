@@ -87,29 +87,11 @@
 
     <p>You have not accepted our terms of service</p>
 
-    <?php else: ?>
+    <?php else: 
 
-        <h2>Thank You, <?php echo $_POST['firstname']; ?></h2>
+    header('Location: FormSubmitted.php') ?>
 
-        <br>
 
-        <p>- You have been registered as
-            <?php echo $_POST['firstname'] . ' ' . $_POST['lastname']; ?> 
-    </br>
-   
-        <br>    
-            - Your email address is registered as:
-            <?php echo $_POST['email'];?>
-    </br>
-    <br>
-    - Your mobile number is registered as:
-    <?php echo $_POST['mobile']; ?>
-    </br>      
-  </p>
-
-        
-
-        <p> Go <a href="Jobs.php">back</a> to the form</p>
 
     <?php endif; ?>
     <?php else: ?>
@@ -120,23 +102,23 @@
     <p>Please fill in this form apply.</p>
     <hr>
   
-  <form action="Jobs.php" method="POST" enctype="multipart/form-data">
+  <form id="theForm" form action="FormSubmitted.php" method="POST" enctype="multipart/form-data">
   
 
   <h2>Registration Form</h2>
 
 
     First name:
-    <input type="text" name="firstname">
+    <input type="text" name="firstname" required>
     
     <br> Last name:
-    <input type="text" name="lastname">
+    <input type="text" name="lastname" required>
     
     <br> Email address:
-    <input type="text" name="email">
+    <input type="text" name="email" required>
 
     <br> Mobile Number:
-    <input type="number" name="mobile">
+    <input type="text" name="mobile" required>
     
     <br> Agree to Terms of Service:
     <input type="checkbox" name="agree">
@@ -150,6 +132,20 @@
 </form>
 <?php endif; ?>
  
+<script> 
+window.onload = function () {
+  var form = document.getElementById('theForm');
+  form.submit.onclick = function (){
+    for(var i=0; i < form.elements.length; i++){
+      if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){
+        alert('There are some required fields!');
+        return false;
+      }
+    }
+    form.submit();
+  }; 
+};
+</script>
 </div> 
 
 </body>
