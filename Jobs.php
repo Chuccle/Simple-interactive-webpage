@@ -10,7 +10,7 @@
   
     <ul>
         <li><strong><a href="about_us.html">About us</strong></a></li>
-        <li><strong><a href="Jobs.html">Jobs</a></strong></li>
+        <li><strong><a href="Jobs.php">Jobs</a></strong></li>
       </ul>
       <img src="Assets/Image for jobs page.jpg" alt="">
 
@@ -80,40 +80,73 @@
     </div> 
  
    <div class="container">
-  <form action="https://formspree.io/f/xbjpywbd" method="POST" enctype="multipart/form-data">
-    
-    <h1>Register</h1>
+  
+   <?php if (isset($_POST['form_submitted'])): ?>
+
+<?php if (!isset($_POST['agree'])): ?>
+
+    <p>You have not accepted our terms of service</p>
+
+    <?php else: 
+
+    header('Location: FormSubmitted.php') ?>
+
+
+
+    <?php endif; ?>
+    <?php else: ?>
+
+
+  <h1>Register</h1>
     
     <p>Please fill in this form apply.</p>
     <hr>
-
-    <label for="fname"><b>First name</b></label>
-    <input type="text" placeholder="Enter first name" name="fname" id="fname" required>
-    
-    <label for="Lname"><b>Last name</b></label>
-    <input type="text" placeholder="Enter last name" name="Lname" id="Lname" required>
-    <hr> 
-
-    <h2>Now please fill in your contact information</h2>
-    
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-
-    <label for="Mobile"><b>Mobile number</b></label>
-    <input type="text" placeholder="Enter your mobile number" name="Mobile" id="Mobile" required >
-
-    <label for="CV"><b>Attach your CV</b></label>
-    <input type="file" placeholder="Attach your CV" name="CV" id="CV" required>
-
-   
-
-
-
-    <p>By applying to be a candidate you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Apply</button>
   
-  </form>
-  </div> 
+  <form id="theForm" form action="FormSubmittedFIles.php" method="POST" enctype="multipart/form-data">
+  
+
+  <h2>Registration Form</h2>
+
+
+    First name:
+    <input type="text" name="firstname" required>
+    
+    <br> Last name:
+    <input type="text" name="lastname" required>
+    
+    <br> Email address:
+    <input type="text" name="email" required>
+
+    <br> Mobile Number:
+    <input type="number" name="mobile">
+    
+    <br> Agree to Terms of Service:
+    <input type="checkbox" name="agree">
+    <br>
+
+    <input type="hidden" name="form_submitted" value="1" />
+
+<br>
+    <input type="submit" value="Submit">
+    </br>
+</form>
+<?php endif; ?>
+ 
+<script> 
+window.onload = function () {
+  var form = document.getElementById('theForm');
+  form.submit.onclick = function (){
+    for(var i=0; i < form.elements.length; i++){
+      if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){
+        alert('There are some required fields!');
+        return false;
+      }
+    }
+    form.submit();
+  }; 
+};
+</script>
+</div> 
 
 </body>
 
