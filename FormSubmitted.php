@@ -20,7 +20,8 @@
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $emailErr = "Invalid email format";
     echo $emailErr;
-echo '<script type="text/javascript"  alert("Please enter a valid email address (format = example@example.com)")
+
+   echo '<script type="text/javascript"  alert("Please enter a valid email address (format = example@example.com)")
  </script>';
 
    }
@@ -58,7 +59,7 @@ if (preg_match($regex, $mobile)) {
 
 
 }
-    ?>
+  ?>
 
 <?php if ($emailValid && $mobileValid == TRUE) {
 savetodb(); }
