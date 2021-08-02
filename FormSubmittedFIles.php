@@ -103,24 +103,49 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
   }
 if ($pdf_blob = fopen($file_tmp, "rb")) {
+  try {
+    include __DIR__."/includes/DatabaseConnection.php";
 $sql = "INSERT INTO jobinterest (FirstName, LastName, MobileNumber, Email, `project_name`, `pdf_doc`)
-VALUES ('{$FirstName}', '{$LastName}', '{$mobile}', '{$email}', '{$project_name}', '{$pdf_blob}')";
+VALUES (:FirstName, :LastName, :mobile, :email, :project_name, :pdf_doc);";
+
+$stmt = $pdo->prepare($insert_sql);
+                $stmt->bindParam(':project_name', $project_name);
+                $stmt->bindParam(':FirstName', $FirstName);
+                $stmt->bindParam(':LastName', $LastName);
+                $stmt->bindParam(':email', $LastName);
+                $stmt->bindParam(':mobile', $LastName);
+
+                $stmt->bindParam(':pdf_doc', $pdf_blob, PDO::PARAM_LOB);
+                
+                if ($stmt->execute() === FALSE) {
+                  echo 'Could not save information to the database';
+              } else {
+                  echo 'Information saved';
+              }
 
 
+            } catch (PDOException $e) {
+                echo 'Database Error ';
+            }
+        } else {
+            //fopen() was not successful in opening the .pdf file for reading.
+            echo 'Could not open the attached pdf file';
+        }
+      }
 
                 
 
 ?>
 <br>
 <?php
-if (mysqli_query($conn, $sql)){
+//if (mysqli_query($conn, $sql)){
 // if (mysqli_query($conn, $sql2)){
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+  //echo "New record created successfully";
+//} else {
+ // echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+//}
 
-$conn->close(); }}
+//$conn->close(); }}}
 ?>
 
 
