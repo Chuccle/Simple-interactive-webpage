@@ -1,9 +1,9 @@
 <?php
-    try 
+    try
     {
       $pdo = new PDO ("mysql:host=localhost;dbname=mysql","root", "");
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
+
    $sql = "SELECT ID, project_name
             FROM jobinterest
             ORDER BY project_name ASC;";
@@ -21,9 +21,8 @@
     $output = ob_get_clean();
 } catch (PDOException $e) {
     echo 'Database Error '. $e->getMessage(). ' in '. $e->getFile().
-        ': '. $e->getLine();   
+        ': '. $e->getLine();
 }
 include __DIR__."/templates/base.html.php";
-
 
 ?>
