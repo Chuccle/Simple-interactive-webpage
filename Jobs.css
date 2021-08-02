@@ -1,64 +1,55 @@
 * {
     box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     max-width: 100%
-    
-  }
-  
-    
-  body {
+}
+
+body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     max-width: 100%
-  }
-  
-  ul {
+}
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    
-  }
-  
-  li {
+}
+
+li {
     float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-style: bold;
-    font-variant: bold;
-  }
-  
+}
 
-  li a:hover {
-    background-color: #111;
-  }
-        
-        
-        
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-style: bold;
+        font-variant: bold;
+    }
 
-    * {box-sizing: border-box}
+        li a:hover {
+            background-color: #111;
+        }
 
-
-
-
+* {
+    box-sizing: border-box
+}
 
 input[type=text], input[type='fname'] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
 }
 
 input[type=text], input[type='Lname'] {
@@ -68,113 +59,103 @@ input[type=text], input[type='Lname'] {
     display: inline-block;
     border: none;
     background: #f1f1f1;
-  }
-  
-  input[type=number], input[type='Mobile'] {
+}
+
+input[type=number], input[type='Mobile'] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
-  }
+}
 
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
 }
-
 
 .registerbtn {
-  background-color: 02acb9;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+    background-color: 02acb9;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
 }
 
-.registerbtn:hover {
-  opacity:1;
-}
-
+    .registerbtn:hover {
+        opacity: 1;
+    }
 
 a {
-  color: dodgerblue;
+    color: dodgerblue;
 }
-
 
 .signin {
-  background-color: #f1f1f1;
-  text-align: center;
+    background-color: #f1f1f1;
+    text-align: center;
 }
 
- 
- .column {
+.column {
     float: left;
     width: 16.6667%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
     margin-top: 50px;
-  
-  }
+}
 
-  .column img:hover {
-    opacity: 0.8;
-  }
-  
+    .column img:hover {
+        opacity: 0.8;
+    }
 
-  .column:after {
-    content: "";
-    clear: both;
-    display: table;
-  } 
+    .column:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 
-  h2 {
+h2 {
     text-align: left;
     text-transform: capitalize;
-    
-  }
+}
 
-  
-
-  p {
+p {
     margin-left: 20px;
     text-align: left;
     font-family: Helvetica;
     font-style: bold;
     font-variant: bold;
     color: black;
-  }
+}
 
-  button {
+button {
     font-size: 200%;
     text-align: center;
     color: rgb(255, 255, 255);
-  }
-  
-  .container::after { 
+}
+
+.container::after {
     content: "";
     clear: both;
     display: table;
     float: center;
-  }
+}
 
-  .row::after {
+.row::after {
     content: "";
     clear: both;
     display: table;
-  }
+}
 
+img {
+    max-width: 100%;
+}
 
-
- img {max-width:100%;} 
-
-input [type=submit]  {
-font-family: Arial, Helvetica, sans-serif;
-font: bold
- }
- 
+input [type=submit] {
+    font-family: Arial, Helvetica, sans-serif;
+    font: bold
+}

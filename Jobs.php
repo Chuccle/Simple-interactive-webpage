@@ -1,24 +1,19 @@
 <html lang="en">
 <html>
-    <head> 
+    <head>
         <link rel="stylesheet" href="Jobs.css">
     </head>
 
-  
-
 <body>
-  
+
     <ul>
         <li><strong><a href="about_us.html">About us</strong></a></li>
         <li><strong><a href="Jobs.php">Jobs</a></strong></li>
       </ul>
       <img src="Assets/Image for jobs page.jpg" alt="">
 
-  
-    
-
     </div>
-    
+
     <h1>Required skills </h1>
     <H2> This job generally requires the ability to do the following work:<br></H2>
       <br>
@@ -35,112 +30,87 @@
   </p>
     <hr>
     <h1>Click on one of the links below to see the relevant qualifications and course resources</h1>
-      
+
     <div class="row">
        <div class="column 1">
-        <a href = "https://www.w3schools.com/cert/cert_html_new.asp" target = "_self"> 
+        <a href = "https://www.w3schools.com/cert/cert_html_new.asp" target = "_self">
           <img src="Assets/HTML.png" alt="Snow" style="width:100%">
       </div>
-      
-    
-      
-      
+
       <div class="column 2">
         <a href = "https://www.w3schools.com/cert/cert_css.asp" target = "_self">
         <img src="Assets/CSS.png" alt="Forest" style="width:100%">
       </div>
-  
-      
-   
+
      <div class="column 3">
        <a href = "https://www.w3schools.com/cert/cert_bootstrap_reg.asp" target = "_self">
       <img src="Assets/BS.png" alt="Mountains" style="width:105%">
      </div>
-  
 
       <div class="column 4">
         <a href = "https://www.w3schools.com/cert/cert_javascript.asp" target = "_self">
         <img src="Assets/JS.png" alt="Mountains" style="width:100%">
       </div>
- 
 
       <div class="column 5">
         <a href = "https://www.w3schools.com/cert/cert_php.asp" target = "_self">
         <img src="Assets/PHP.png" alt="Mountains" style="width:102%">
       </div>
 
-    
-
       <div class="column 6">
         <a href = "https://www.w3schools.com/cert/cert_sql.asp" target = "_self">
         <img src="Assets/MYSQL.png" alt="Mountains" style="width:100%">
         </a>
       </div>
-      
-    </div> 
- 
+
+    </div>
+
    <div class="container">
-  
+
    <?php if (isset($_POST['form_submitted'])): ?>
 
 <?php if (!isset($_POST['agree'])): ?>
 
     <p>You have not accepted our terms of service</p>
 
-    <?php else: ?>
+    <?php else:
 
-        <h2>Thank You, <?php echo $_POST['firstname']; ?></h2>
-
-        <br>
-
-        <p>- You have been registered as
-            <?php echo $_POST['firstname'] . ' ' . $_POST['lastname']; ?> 
-    </br>
-   
-        <br>    
-            - Your email address is registered as:
-            <?php echo $_POST['email'];?>
-    </br>
-    <br>
-    - Your mobile number is registered as:
-    <?php echo $_POST['mobile']; ?>
-    </br>      
-  </p>
-
-        
-
-        <p> Go <a href="Jobs.php">back</a> to the form</p>
+    header('Location: FormSubmittedFIles.php') ?>
 
     <?php endif; ?>
     <?php else: ?>
 
-
   <h1>Register</h1>
-    
+
     <p>Please fill in this form apply.</p>
     <hr>
-  
-  <form action="Jobs.php" method="POST" enctype="multipart/form-data">
-  
+
+  <form id="theForm" form action="FormSubmittedFIles.php" method="POST" enctype="multipart/form-data">
 
   <h2>Registration Form</h2>
 
-
     First name:
-    <input type="text" name="firstname">
-    
+    <input type="text" name="firstname" required>
+
     <br> Last name:
-    <input type="text" name="lastname">
-    
+    <input type="text" name="lastname" required>
+
     <br> Email address:
-    <input type="text" name="email">
+    <input type="text" name="email" required>
 
     <br> Mobile Number:
     <input type="number" name="mobile">
-    
+
+     <br>
+    <input type="text" name="project_name"/>
+
+    <br>
+     <input type="file" name="pdf_file" accept=".pdf"/>
+    <input type="hidden" name="MAX_FILE_SIZE" value="67108864"/> <!--64 MB's worth in bytes-->
+    <br>
+
     <br> Agree to Terms of Service:
     <input type="checkbox" name="agree">
-    <br>
 
     <input type="hidden" name="form_submitted" value="1" />
 
@@ -149,8 +119,22 @@
     </br>
 </form>
 <?php endif; ?>
- 
-</div> 
+
+<script>
+window.onload = function () {
+  var form = document.getElementById('theForm');
+  form.submit.onclick = function (){
+    for(var i=0; i < form.elements.length; i++){
+      if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){
+        alert('There are some required fields!');
+        return false;
+      }
+    }
+    form.submit();
+  };
+};
+</script>
+</div>
 
 </body>
 
@@ -161,8 +145,6 @@
     <li><strong><a href="">Legal</strong></a></li>
     <li><strong><a href="">Modern slavery statement </strong></a></li>
   </ul>
-  
-
 
 </footer>
 </html>
