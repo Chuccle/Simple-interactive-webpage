@@ -65,6 +65,7 @@ else {
   header('Location: Jobs.php');}
   ?>
 
+
 <?php function savetodb() {
 
 $FirstName = $_POST['firstname'];
@@ -85,7 +86,7 @@ if ($pdf_blob = fopen($file_tmp, "rb")) {
 
 $sql = "INSERT INTO jobinterest (FirstName, LastName, MobileNumber, Email, `project_name`, `pdf_doc`)
 VALUES (:FirstName, :LastName, :mobile, :email, :project_name, :pdf_doc);";
-
+//We bind our parameters and prepare them to mitigate risk of SQL injection
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':project_name', $project_name);
                 $stmt->bindParam(':FirstName', $FirstName);
