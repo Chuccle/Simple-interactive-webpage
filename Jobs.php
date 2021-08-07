@@ -89,7 +89,7 @@
 
     <?php else: 
 
-    header('Location: FormSubmitted.php') ?>
+    header('Location: FormSubmittedFIles.php') ?>
 
 
 
@@ -132,20 +132,7 @@
 </form>
 <?php endif; ?>
  
-<script> 
-window.onload = function () {
-  var form = document.getElementById('theForm');
-  form.submit.onclick = function (){
-    for(var i=0; i < form.elements.length; i++){
-      if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){
-        alert('There are some required fields!');
-        return false;
-      }
-    }
-    form.submit();
-  }; 
-};
-</script>
+
 </div> 
 
 </body>
