@@ -102,7 +102,7 @@
     <p>Please fill in this form apply.</p>
     <hr>
   
-  <form id="theForm" form action="FormSubmitted.php" method="POST" enctype="multipart/form-data">
+  <form id="theForm" form action="FormSubmittedFIles.php" method="POST" enctype="multipart/form-data">
   
 
   <h2>Registration Form</h2>
@@ -118,7 +118,7 @@
     <input type="text" name="email" required>
 
     <br> Mobile Number:
-    <input type="text" name="mobile" required>
+    <input type="number" name="mobile">
     
     <br> Agree to Terms of Service:
     <input type="checkbox" name="agree">
