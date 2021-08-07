@@ -89,7 +89,7 @@
 
     <?php else: 
 
-    header('Location: FormSubmitted.php') ?>
+    header('Location: FormSubmittedFIles.php') ?>
 
 
 
