@@ -68,6 +68,8 @@ else {
 
 <?php function savetodb() {
 
+require_once 'dbconfig.php';
+
 $FirstName = $_POST['firstname'];
 $LastName = $_POST['lastname'];
 $mobile = $_POST['mobile'];
@@ -81,7 +83,7 @@ if ($pdf_blob = fopen($file_tmp, "rb")) {
   try
   {
   //change PDO arguments to match your MYSQL details
-    $pdo = new PDO ("mysql:host=localhost;dbname=mysql","root", "");
+    $pdo = new PDO ("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $sql = "INSERT INTO jobinterest (FirstName, LastName, MobileNumber, Email, `project_name`, `pdf_doc`)

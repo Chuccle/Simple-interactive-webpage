@@ -1,7 +1,8 @@
 <?php
+require_once 'dbconfig.php';
     try 
     {
-      $pdo = new PDO ("mysql:host=localhost;dbname=mysql","root", "");
+      $pdo = new PDO ("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
    $sql = "SELECT ID, project_name

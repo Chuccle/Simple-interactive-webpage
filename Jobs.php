@@ -119,6 +119,13 @@
 
     <br> Mobile Number:
     <input type="number" name="mobile">
+
+    <label for="project_name">Resume Name</label>
+    <input type="text" name="project_name"/>
+
+    <input type="file" name="pdf_file" id="pdf_file" accept="application/pdf" />
+    <input type="hidden" name="MAX_FILE_SIZE" value="67108864"/> <!--64 MB's worth in bytes-->
+    <br>
     
     <br> Agree to Terms of Service:
     <input type="checkbox" name="agree">

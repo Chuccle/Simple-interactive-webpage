@@ -1,10 +1,11 @@
 <?php
+require_once 'dbconfig.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['ID'])){
     try
     {
     //change PDO arguments to match your MYSQL details
-      $pdo = new PDO ("mysql:host=localhost;dbname=mysql","root", "");
+      $pdo = new PDO ("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e)
     {

@@ -126,10 +126,12 @@ if ($password1 != $password2) {
         
         function Register(array $data)
         {
+            require 'dbconfig.php'; 
+           
             try
             {
             //change PDO arguments to match your MYSQL details
-              $pdo = new PDO ("mysql:host=localhost;dbname=mysql","root", "");
+              $pdo = new PDO ("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
             echo 'connection failed: '.$e->getMessage();
@@ -158,10 +160,13 @@ if ($password1 != $password2) {
 
 function checkEmail(string $email) : array
 {
+    require 'dbconfig.php';
+    
     try
     {
     //change PDO arguments to match your MYSQL details
-      $pdo = new PDO ("mysql:host=localhost;dbname=mysql","root", "");
+      $pdo = new PDO ("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
+     
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
     echo 'connection failed: '.$e->getMessage();
@@ -186,6 +191,4 @@ function checkEmail(string $email) : array
     $response['data'] = $result;
     return $response;
 }}
-
-
 ?>
